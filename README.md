@@ -1,82 +1,126 @@
-# CS50: Introduction to Computer Science
-
-This is CS50, Harvard University's introduction to the intellectual enterprises of computer science and the art of programming.
-
-## 2022 Solutions
-
-> A quick word on [Academic Honesty](https://cs50.harvard.edu/x/2022/honesty/). While these solutions will help you to get through the course without too much effort, you should do your best to figure out a working solution yourself before taking a look at any of my solutions. Investing your time and energy into solving the problem sets yourself is in my opinion the only way to eventual mastery.
-Go ahead and take a peek at the solutions, and remember to have fun.
-
-## CS50x 2022 - Introduction To Computer Science
-Harvard's CS50x 2022 - Labs and Psets
-
-> This repo was built to display my solutions to Harvard's <a href='https://cs50.harvard.edu/x/2022/'>CS50x</a>. You'll be redirected either to <b>my solutions</b> by clicking on the name of the project or the <b>CS50's implementation details and instructions</b> by clicking on <i>Lab</i> or <i>PSet Instructions</i>.
-
-#### Every lab and pset achieved 100% when submitted.
-###### I'll be pleased to answer any questions you may have, so if you do have one, <i>hit me up on <a href="https://github.com/Verisimilitude11/CS50x/discussions" >Discussions</a>!</i>
-
-<br>
-I know it's cliché but please leave a star:star: if you found this helpful! (it would be of GREAT help!)
-
-## Table Of Contents
-
-- [Week 0: Scratch:video_game:](/0-Scratch) - <a href='https://cs50.harvard.edu/x/2022/psets/0/scratch/'> Pset Instructions </a>
-  * <a href='https://scratch.mit.edu/projects/717016087/'> F1 Game </a> (if you feel like playing it!)
-
-- [Week 1: C](/1-C/) - <a href='https://cs50.harvard.edu/x/2022/psets/1/'> Pset Instructions </a>
-  * [hello:wave:](/1-C/hello)
-  * mario:bricks:
-    + [less](/1-C/mario/mario-less)
-    + [more](/1-C/mario/mario-more/)
-  * [cash:moneybag:](/1-C/cash)
-  * [credit:credit_card:](/1-C/credit)
-
-- [Week 2: Arrays](/2-Arrays/) - <a href='https://cs50.harvard.edu/x/2022/psets/2/'> Pset Instructions </a> 
-  * [Lab 2: scrabble:capital_abcd:](/2-Arrays/LAB-scrabble) - <a href='https://cs50.harvard.edu/x/2022/labs/2/'> Lab Instructions </a>
-  * [readability:books:](/2-Arrays/readability)
-  * [caesar:lock:](/2-Arrays/caesar)
-  * [substitution:arrows_counterclockwise:](/2-Arrays/substitution)
-
-- [Week 3: Algorithms](/3-Algorithms) - <a href='https://cs50.harvard.edu/x/2022/psets/3/'> Pset Instructions </a>
-  * [Lab 3: Sort:question:](/3-Algorithms/LAB-sort) - <a href='https://cs50.harvard.edu/x/2022/labs/3/'> Lab Instructions </a>
-  * [plurality:ballot_box:](/3-Algorithms/plurality)
-  * [runoff:ballot_box:](/3-Algorithms/runoff)
-  * tideman:ballot_box:
-  
-- [Week 4: Memory](/4-Memory) - <a href='https://cs50.harvard.edu/x/2022/psets/4/'> Pset Instructions </a> 
-  * [Lab 4: Volume:radio:](/4-Memory/LAB-volume) - <a href='https://cs50.harvard.edu/x/2022/labs/4/'> Lab Instructions </a>
-  * filter:camera_flash:
-    + [less](/4-Memory/filter-less/)
-    + more
-  * [recover:floppy_disk:](/4-Memory/recover)
-
-- [Week 5: Data Structures](/5-DataStructures) - <a href='https://cs50.harvard.edu/x/2022/psets/5/'> Pset Instructions </a>
-  * [Lab 5: Inheritance:family_man_woman_girl_boy:](/5-DataStructures/LAB-inheritance) - <a href='https://cs50.harvard.edu/x/2022/labs/5/'> Lab Instructions </a>
-  * [speller:pencil2:](/5-DataStructures/speller)
-
-- [Week 6: Python](/6-Python) - <a href='https://cs50.harvard.edu/x/2022/psets/6/'> Pset Instructions </a>
-  * [Lab 6: World Cup:soccer:](/6-Python/LAB-worldCup) - <a href='https://cs50.harvard.edu/x/2022/labs/6/'> Lab Instructions </a>
-  * [hello:wave:](/6-Python/sentimental-hello)
-  * mario:bricks:
-    + [less](/6-Python/sentimental-mario-less/)
-    + [more](/6-Python/sentimental-mario-more)
-  * [cash:moneybag:](/6-Python/sentimental-cash)
-  * [credit:credit_card:](/6-Python/sentimental-credit)
-  * [readability:books:](/6-Python/sentimental-readability)
-  * [dna:dna:](/6-Python/dna)
-  
-- [Week 7: SQL](7-SQL) - <a href='https://cs50.harvard.edu/x/2022/psets/7/'> Pset Instructions </a>
-  * [Lab 7: songs:notes:](/7-SQL/LAB-songs) - <a href='https://cs50.harvard.edu/x/2022/labs/7/'> Lab Instructions </a>
-  * [movies	:film_strip:](/7-SQL/movies)
-  * [fiftyville:detective:](/7-SQL/fiftyville)
-
-- [Week 8: HTML/CSS/Javascript](8-HTML-CSS-Javascript/) - <a href='https://cs50.harvard.edu/x/2022/psets/8/'> Pset Instructions </a>
-  * [Lab 8: trivia](/8-HTML-CSS-Javascript/LAB-trivia)
-  * Working on it! :zany_face:
-
-<br>
-<br>
-
-### DISCLAIMER:
-
-[**Academic Honesty**](https://cs50.harvard.edu/x/2022/honesty/) policy of the course.
+<h1 id="cs50-introduction-to-computer-science">CS50: Introduction to Computer Science</h1>
+<p>This is CS50, Harvard University&#39;s introduction to the intellectual enterprises of computer science and the art of programming.</p>
+<h2 id="2022-solutions">2022 Solutions</h2>
+<blockquote>
+    <p>
+        A quick word on <a href="https://cs50.harvard.edu/x/2022/honesty/">Academic Honesty</a>. While these solutions will help you to get through the course without too much effort, you should do your best to figure out a working solution
+        yourself before taking a look at any of my solutions. Investing your time and energy into solving the problem sets yourself is in my opinion the only way to eventual mastery. Go ahead and take a peek at the solutions, and remember
+        to have fun.
+    </p>
+</blockquote>
+<h2 id="cs50x-2022-introduction-to-computer-science">CS50x 2022 - Introduction To Computer Science</h2>
+<p>Harvard&#39;s CS50x 2022 - Labs and PSets</p>
+<blockquote>
+    <p>
+        This repo was built to display my solutions to Harvard&#39;s <a href="https://cs50.harvard.edu/x/2022/">CS50x</a>. You&#39;ll be redirected either to <b>my solutions</b> by clicking on the name of the project or the
+        <b>CS50&#39;s implementation details and instructions</b> by clicking on <i>Lab</i> or <i>PSet Instructions</i>.
+    </p>
+</blockquote>
+<h4 id="every-lab-and-pset-achieved-100-when-submitted-">Every Lab and PSet achieved 100% when submitted.</h4>
+<h6 id="i-ll-be-pleased-to-answer-any-questions-you-may-have-so-if-you-do-have-one-i-hit-me-up-on-a-href-https-github-com-verisimilitude11-cs50x-discussions-discussions-a-i-">
+    I&#39;ll be pleased to answer any questions you may have, so if you do have one, <i>hit me up on <a href="https://github.com/Verisimilitude11/CS50x/discussions">Discussions</a>!</i>
+</h6>
+<p>
+    <br />
+    I know it&#39;s cliché but please leave a star :star: if you found this helpful!
+</p>
+<h2 id="table-of-contents">Table Of Contents</h2>
+<ul>
+    <li>
+        <p><a href="/0-Scratch">Week 0: Scratch:video_game:</a> - <a href="https://cs50.harvard.edu/x/2022/PSets/0/scratch/"> PSet Instructions </a></p>
+        <ul>
+            <li><a href="https://scratch.mit.edu/projects/717016087/"> F1 Game </a> (if you feel like playing it!)</li>
+        </ul>
+    </li>
+    <li>
+        <p><a href="/1-C/">Week 1: C</a> - <a href="https://cs50.harvard.edu/x/2022/PSets/1/"> PSet Instructions </a></p>
+        <ul>
+            <li><a href="/1-C/hello">hello:wave:</a></li>
+            <li>
+                mario:bricks:
+                <ul>
+                    <li><a href="/1-C/mario/mario-less">less</a></li>
+                    <li><a href="/1-C/mario/mario-more/">more</a></li>
+                </ul>
+            </li>
+            <li><a href="/1-C/cash">cash:moneybag:</a></li>
+            <li><a href="/1-C/credit">credit:credit_card:</a></li>
+        </ul>
+    </li>
+    <li>
+        <p><a href="/2-Arrays/">Week 2: Arrays</a> - <a href="https://cs50.harvard.edu/x/2022/PSets/2/"> PSet Instructions </a></p>
+        <ul>
+            <li><a href="/2-Arrays/Lab-scrabble">Lab 2: scrabble:capital_abcd:</a> - <a href="https://cs50.harvard.edu/x/2022/Labs/2/"> Lab Instructions </a></li>
+            <li><a href="/2-Arrays/readability">readability:books:</a></li>
+            <li><a href="/2-Arrays/caesar">caesar:lock:</a></li>
+            <li><a href="/2-Arrays/substitution">substitution:arrows_counterclockwise:</a></li>
+        </ul>
+    </li>
+    <li>
+        <p><a href="/3-Algorithms">Week 3: Algorithms</a> - <a href="https://cs50.harvard.edu/x/2022/PSets/3/"> PSet Instructions </a></p>
+        <ul>
+            <li><a href="/3-Algorithms/Lab-sort">Lab 3: Sort:question:</a> - <a href="https://cs50.harvard.edu/x/2022/Labs/3/"> Lab Instructions </a></li>
+            <li><a href="/3-Algorithms/plurality">plurality:ballot_box:</a></li>
+            <li><a href="/3-Algorithms/runoff">runoff:ballot_box:</a></li>
+            <li>tideman:ballot_box:</li>
+        </ul>
+    </li>
+    <li>
+        <p><a href="/4-Memory">Week 4: Memory</a> - <a href="https://cs50.harvard.edu/x/2022/PSets/4/"> PSet Instructions </a></p>
+        <ul>
+            <li><a href="/4-Memory/Lab-volume">Lab 4: Volume:radio:</a> - <a href="https://cs50.harvard.edu/x/2022/Labs/4/"> Lab Instructions </a></li>
+            <li>
+                filter:camera_flash:
+                <ul>
+                    <li><a href="/4-Memory/filter-less/">less</a></li>
+                    <li>more</li>
+                </ul>
+            </li>
+            <li><a href="/4-Memory/recover">recover:floppy_disk:</a></li>
+        </ul>
+    </li>
+    <li>
+        <p><a href="/5-DataStructures">Week 5: Data Structures</a> - <a href="https://cs50.harvard.edu/x/2022/PSets/5/"> PSet Instructions </a></p>
+        <ul>
+            <li><a href="/5-DataStructures/Lab-inheritance">Lab 5: Inheritance:family_man_woman_girl_boy:</a> - <a href="https://cs50.harvard.edu/x/2022/Labs/5/"> Lab Instructions </a></li>
+            <li><a href="/5-DataStructures/speller">speller:pencil2:</a></li>
+        </ul>
+    </li>
+    <li>
+        <p><a href="/6-Python">Week 6: Python</a> - <a href="https://cs50.harvard.edu/x/2022/PSets/6/"> PSet Instructions </a></p>
+        <ul>
+            <li><a href="/6-Python/Lab-worldCup">Lab 6: World Cup:soccer:</a> - <a href="https://cs50.harvard.edu/x/2022/Labs/6/"> Lab Instructions </a></li>
+            <li><a href="/6-Python/sentimental-hello">hello:wave:</a></li>
+            <li>
+                mario:bricks:
+                <ul>
+                    <li><a href="/6-Python/sentimental-mario-less/">less</a></li>
+                    <li><a href="/6-Python/sentimental-mario-more">more</a></li>
+                </ul>
+            </li>
+            <li><a href="/6-Python/sentimental-cash">cash:moneybag:</a></li>
+            <li><a href="/6-Python/sentimental-credit">credit:credit_card:</a></li>
+            <li><a href="/6-Python/sentimental-readability">readability:books:</a></li>
+            <li><a href="/6-Python/dna">dna:dna:</a></li>
+        </ul>
+    </li>
+    <li>
+        <p><a href="7-SQL">Week 7: SQL</a> - <a href="https://cs50.harvard.edu/x/2022/PSets/7/"> PSet Instructions </a></p>
+        <ul>
+            <li><a href="/7-SQL/Lab-songs">Lab 7: songs:notes:</a> - <a href="https://cs50.harvard.edu/x/2022/Labs/7/"> Lab Instructions </a></li>
+            <li><a href="/7-SQL/movies">movies :film_strip:</a></li>
+            <li><a href="/7-SQL/fiftyville">fiftyville:detective:</a></li>
+        </ul>
+    </li>
+    <li>
+        <p><a href="8-HTML-CSS-Javascript/">Week 8: HTML/CSS/Javascript</a> - <a href="https://cs50.harvard.edu/x/2022/PSets/8/"> PSet Instructions </a></p>
+        <ul>
+            <li><a href="/8-HTML-CSS-Javascript/Lab-trivia">Lab 8: trivia</a></li>
+            <li>Working on it! :zany_face:</li>
+        </ul>
+    </li>
+</ul>
+<p>
+    <br />
+    <br />
+</p>
