@@ -1,6 +1,6 @@
 <h1 id="cs50-introduction-to-computer-science">CS50: Introduction to Computer Science</h1>
 <p>This is CS50, Harvard University&#39;s introduction to the intellectual enterprises of computer science and the art of programming.</p>
-<h2 id="2022-solutions">2022 Solutions</h2>
+<h2 id="disclaimer">Disclaimer</h2>
 <blockquote>
     <p>
         A quick word on <a href="https://cs50.harvard.edu/x/2022/honesty/">Academic Honesty</a>. While these solutions will help you to get through the course without too much effort, you should do your best to figure out a working solution
