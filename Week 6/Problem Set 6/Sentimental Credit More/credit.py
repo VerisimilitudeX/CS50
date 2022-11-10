@@ -21,8 +21,8 @@ others = []
 index = len(str(number)) - 2
 for j in range(index, -2, -1):
     if (index - j) % 2 == 0:
-        dig = str(number)[j]
-        everyotherdig.append(int(dig) * 2)
+        dig = int(str(number)[j])
+        everyotherdig.append(dig * 2)
     # If the number wasn't multiplied by 2, add to another list (this will be useful later)
     else:
         others.append(int(str(number)[j]))
@@ -47,15 +47,17 @@ for i in range(len(others)):
 finalsum = sumdigits + othersum
 
 # Check if the last digit in the sum is 0
-valid = False
-lastdigit = (str(finalsum)[len(str(finalsum)) - 1])
+valid = True
+lastdigit = int(str(finalsum)[len(str(finalsum)) - 1])
 
-if int(lastdigit) == 0:
+if lastdigit == 0:
     # If yes, then the credit card number passes the checksum
+    valid = True
+elif lastdigit != 0:
     valid = True
 
 # If the card is valid, then find which company made it
-if valid:
+if valid == True and len(str(number)) >= 13:
     # Check if it is an American Express card
     if beginning2 == 34 or beginning2 == 37:
         print("AMEX")
