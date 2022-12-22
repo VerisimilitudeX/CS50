@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Index
+{% endblock %}
+
+{% block main %}
+<h2>Portfolio</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Current price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Cash</td>
+            <td></td>
+            <td></td>
+            <td>{{ balance | usd }}</td>
+
+        </tr>
+        {% for asset in port %}
+        <tr>
+            <td>{{ asset["symbol"] }}</td>
+            <td>{{ asset["SUM(quantity)"] }}</td>
+            <td>{{ prices[loop.index0] | usd }}</td>
+            <td>{{ ((prices[loop.index0])*asset["SUM(quantity)"]) | usd }}</td>
+        </tr>
+        {% endfor %}
+
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td><b>Net total</b></td>
+            <td></td>
+            <td></td>
+            <td>{{ total_bal | usd }}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

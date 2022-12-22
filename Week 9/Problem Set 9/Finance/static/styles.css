@@ -1,0 +1,234 @@
+/* Size for brand */
+nav .navbar-brand {
+    font-size: xx-large;
+    background-color: #142033;
+}
+
+/* navbar too    background-color: #1e2d44; */
+nav .navbar {
+    background-color: #142033;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue {
+    color: #537fbe;
+}
+
+nav .navbar-brand .red {
+    color: #ea433b;
+}
+
+nav .navbar-brand .yellow {
+    color: #f5b82e;
+}
+
+nav .navbar-brand .green {
+    color: #2e944b;
+}
+
+body {
+    /* bg color gradient centered on #101721 */
+    height: 100%;
+    background: #1e2d44;
+    background: -moz-linear-gradient(top, #1e2d44 0%, #080f1a 100%);
+    background: -webkit-linear-gradient(top, #1e2d44 0%, #080f1a 100%);
+    background: linear-gradient(to bottom, #1e2d44 0%, #080f1a 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e2d44', endColorstr='#080f1a', GradientType=0);
+
+    padding-top: 56px;
+    text-color: #ffffff;
+    color: #ffffff;
+}
+
+h1 {
+    color: #ffffff;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #ffffff;
+}
+
+h3 {
+    color: #ffffff;
+}
+
+.currency {
+    color: #ffffff;
+}
+
+.gray {
+    color: #a9a9a9;
+}
+
+.button {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgba(243, 244, 246, 0.9);
+    background: #1c2333;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button:before {
+    content: "";
+    background: linear-gradient(45deg,
+            #ff0000,
+            #ff7300,
+            #fffb00,
+            #48ff00,
+            #00ffd5,
+            #002bff,
+            #7a00ff,
+            #ff00c8,
+            #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.button:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 15px;
+}
+
+/* override all bootstrap input field styles */
+input {
+    background-color: #3b485c;
+    color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    text-color: #ffffff;
+    width: 100%;
+}
+
+input:focus {
+    background-color: #3f4b65;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+input:active {
+    background-color: #3f4b65;
+    color: #ffffff;
+}
+
+input:hover {
+    background-color: #3f4b65;
+    color: #ffffff;
+}
+
+input::placeholder {
+    color: #ffffff;
+}
+
+
+/* Add a shimmering effect to the element */
+.shimmer {
+    background: linear-gradient(to right, #3b485c 0%, #2c384c 20%, #3b485c 40%);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+}
+
+/* Keyframe animation for the shimmer effect */
+@keyframes shimmer {
+    0% {
+        background-position: -100%;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+.navbar {
+    background-color: #142033;
+    padding: 0;
+    border-radius: 10px;
+    border: 0;
+    /* black line on bottom of navbar */
+    border-bottom: 1px solid black;
+}
+
+.unbold {
+    font-weight: normal;
+}
+
+th.unbold {
+    text-align: left;
+    padding: 5px;
+}
+
+td {
+    text-align: right;
+}
+
+td,
+th {
+    padding: 4px 8px;
+    /* adjust the values as needed */
+    line-height: 1.5;
+    border-spacing: 0 4px;
+    color: #ffffff;
+}
+
+table {
+    width: 80%;
+    width: 200px;
+}
+
+table {
+    width: 200px;
+    max-width: 300px;
+    color: #ffffff;
+}
+
+td,
+th {
+    padding: 5px;
+    text-align: right;
+    color: #ffffff;
+}
+
+th {
+    text-align: left;
+    color: #ffffff;
+}

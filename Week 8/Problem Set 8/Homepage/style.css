@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* > * {
+    font-family: "Poppins", cursive;
+}
+
+
+body {
+    --bg-btn: rgba(67, 56, 202, 0.8);
+    --bg-light: rgba(28, 35, 51);
+    --text-light: rgba(14, 21, 37);
+    --primary-dark: rgba(243, 244, 246, 1);
+    --secondary-dark: rgba(255, 255, 255);
+
+    background-color: var(--text-light);
+}
+
+.btn {
+    background-color: #4CAF50;
+    border: none;
+    color: rgba(243, 244, 246, 0.9);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+p {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+}
+
+.text-center {
+    text-align: center;
+    padding: 10px 15px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(auto, 1000px));
+    row-gap: 2em;
+    column-gap: 3em;
+    margin: 3em 0;
+
+}
+
+.grid .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4em 0;
+}
+
+.grid .icon > span {
+    font-size: 4em;
+    color: var(--bg-btn);
+}
+
+.primary-dark {
+    color: var(--primary-dark);
+    text-align: left;
+}
+
+.secondary-dark {
+    color: var(--secondary-dark);
+    padding: 20px 30px;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+    box-shadow: 1px 5px 20px rgba(55, 65, 81, 0.1);
+    border-radius: 20px;
+}
+
+button {
+    border-radius: 50px
+}
+
+/*
+/* width */
+/* set the width of the scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Handle */
+/* set the color of the scrollbar and the radius of its corners */
+::-webkit-scrollbar-thumb {
+    background: rgb(150, 150, 150);
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* Handle on hover */
+/* set the color of the scrollbar when hovered over */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(131, 131, 131);
+}
+
+/* Handle on active */
+/* set the color of the scrollbar when clicked */
+::-webkit-scrollbar-thumb:active {
+    background: rgb(104, 104, 104);
+}
+
+/* Hide the horizontal scroll bar */
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.alert {
+    padding: 17px;
+    background-color: #af0c00;
+    border-radius: 17px;
+    color: rgba(243, 244, 246, 0.9);
+}
+
+.button {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgba(243, 244, 246, 0.9);
+    background: #1c2333;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button:before {
+    content: "";
+    background: linear-gradient(45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.button:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+#redirect-button {
+    justify-content: center;
+    display: flex;
+}
+
+
+#features {
+    padding: 20px 20px;
+    margin: 20px 20px;
+}
+
+
+#gui-features,
+#gui-li {
+    text-align: left;
+}
+
+.feature {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+    padding: 20px 20px;
+    background-color: #0e1525;
+    color: rgba(243, 244, 246);
+    border-radius: 20px;
+    vertical-align: middle;
+    list-style: none;
+
+    /* put the header on top, then a line, then the text */
+    flex-flow: column;
+    margin: 20px;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Chemistry!</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let correct = document.querySelector(".correct");
+            correct.addEventListener("click", function () {
+                correct.style.backgroundColor = "green";
+                document.querySelector("#feedback1").innerHTML = "Correct!";
+            });
+
+            let incorrects = document.querySelectorAll(".incorrect");
+            for (let i = 0; i < incorrects.length; i++) {
+                incorrects[i].addEventListener("click", function () {
+                    incorrects[i].style.backgroundColor = "red";
+                    document.querySelector("#feedback1").innerHTML = "Incorrect";
+                });
+            }
+
+            document.querySelector("#check").addEventListener("click", function () {
+                let input = document.querySelector("input");
+                if (input.value.includes("Fluorine")) {
+                    input.style.backgroundColor = "green";
+                    document.querySelector("#feedback2").innerHTML = "Correct!";
+                } else {
+                    input.style.backgroundColor = "red";
+                    document.querySelector("#feedback2").innerHTML = "Incorrect";
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header m-1" style="font-weight: bold">
+        <h1><b>Chemistry!</b></h1>
+    </div>
+
+    <div class="container-fluid">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+            <h3>Which element has similar chemical properties to Selenium?</h3>
+            <p>
+                <button class="incorrect btn btn-primary" style="border-radius: 7px; background-color: #7200ff"
+                    type="submit">Iron</button>
+                <button class="incorrect btn btn-primary" style="border-radius: 7px; background-color: #7200ff"
+                    type="submit">Boron</button>
+                <button class="incorrect btn btn-primary" style="border-radius: 7px; background-color: #7200ff"
+                    type="submit">Arsenic</button>
+                <button class="incorrect btn btn-primary" style="border-radius: 7px; background-color: #7200ff"
+                    type="submit">Uranium</button>
+                <button class="correct btn btn-primary" style="border-radius: 7px; background-color: #7200ff"
+                    type="submit">Oxygen</button>
+            </p>
+
+            <p id="feedback1"></p>
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <h3>What is the most electronegative element??</h3>
+            <input type="text" style="border-radius: 7px"></input>
+            <button id="check" style="border-radius: 7px; background-color: #7200ff" class="btn btn-primary"
+                check">Check Answer</button>
+
+            <p id="feedback2"></p>
+        </div>
+    </div>
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <h3><span>Verisimilitude11</span></h3>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                ·
+                <a href="#">Blog</a>
+                ·
+                <a href="#">Pricing</a>
+                ·
+                <a href="#">About</a>
+                ·
+                <a href="#">FAQs</a>
+                ·
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">Piyush Acharya &copy; 2022</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>Redmond, Washington </span> United States</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:contact@piyushacharya.com">contact@piyushacharya.com
+                    </a></p>
+            </div>
+
+            <div>
+                <i class="fas fa-dna"></i>
+                <p><a href="https://github.com/Verisimilitude11/DNAnalyzer">DNAnalyzer
+                    </a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about">
+                <span>About the company</span>
+                DNAnalyzer is a highly efficient, powerful, and feature-rich algorithm for analyzing DNA sequences.
+            </p>
+
+            <div class="footer-icons">
+
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-github"></i></a>
+
+            </div>
+
+        </div>
+
+    </footer>
+</body>
+
+</html>

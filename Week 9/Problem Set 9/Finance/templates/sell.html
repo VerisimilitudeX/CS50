@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Sell
+{% endblock %}
+
+{% block main %}
+<h2>Sell</h2>
+<form action="/sell" method="post">
+    <select class="form-select mx-auto w-25" name="symbol">
+        <option disabled selected value="None">Sell</option>
+        {% for owned in port %}
+        <option value="{{ loop.index0 }}">{{ owned["symbol"] }} {{ owned["SUM(quantity)"] }}</option>
+        {% endfor %}
+    </select>
+    <div class="form-group">
+        <input autocomplete="off" autofocus class="form-control" name="shares" placeholder="Shares" type="number">
+    </div>
+    <button class="btn btn-primary" type="submit">Sell</button>
+</form>
+{% endblock %}

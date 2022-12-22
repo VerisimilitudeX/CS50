@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <!--div center everything-->
+    <div style="width: 500px; margin: auto">
+        <h1>Quote</h1>
+    <form action="/quote" method="POST" id="form">
+        <div class="mb-3">
+            <input autofocus class="form-control mx-auto w-auto input-field" id="symbol" name="symbol" placeholder="Search for stocks" type="text">
+            <br>
+            <button class="button" type="submit">Search</button>
+        </div>
+    </form>
+
+    {% if submitted %}
+        {% if results %}
+            <h2 style="display: inline-block;">{{ results.name }}</h2>
+            <h6 class="gray" style="text-align: left; display: inline-block; margin-left: 10px; vertical-align: down">{{ results.primaryExchange }}: {{ results.symbol }}</h6>
+            <!--up arrow if the change is positive, down if it isn't-->
+            <p>
+                <h3 style="display: inline-block">{{ results.price | usd }}</h4>
+            {% if results.change > 0 %}
+                <span class="currency" style="display: inline-block; font-size: larger">
+                    {{ results.currency }}
+                    <span style="color: #34e36f">&#9650;</span></i>
+                    <span style="color: #34e36f">{{ results.change | usd }} (+{{ results.changePercent * 100 | round(2) }}%) today</span>
+                </span>
+            {% else %}
+                <span class="currency" style="display: inline-block; font-size: larger">
+                    {{ results.currency }}
+                    <span style="color: red">&#x25BC;</span></i>
+                    <span style="color: red">{{ results.change | usd }} ({{ results.changePercent * 100 | round(2) }}%) today</span>
+                </span>
+            {% endif %}
+                <br>
+                <span style="color: #939393">
+                    Last Updated: {{ results.latestTime | replace(", 2022", "") }}, {{ results.latestUpdate | format_time }} EST
+                    {% if not results.isUSMarketOpen %}
+                        <span style="color: #939393">· Market Closed</span>
+                    {% elif results.isUSMarketOpen %}
+                        <span style="color: #939393">· Market Open</span>
+                    {% else %}
+                        <span style="color: #939393">· After Hours</span>
+                    {% endif %}
+                </span>
+            </p>
+        <!--make a table of the most important data-->
+        <div style="color: #ffffff; border-radius: 10px; background-color: #161e2d; border: 1px solid #161e2a; padding: 10px; border: 1px solid #313947; align-items: center; justify-content: center; margin: 0 auto; width: 100%; max-width: 500px">
+            <table style="color: #ffffff; width: 100%; border-radius: 10px">
+                <tbody>
+                    <tr>
+                        <th class="unbold" scope="row">Previous Close</th>
+                        <td><b>{{ results.previousClose | usd }}</b></td>
+                    </tr>
+                    <!--
+                    <tr>
+                        <th class="unbold" scope="row">Day Range</th>
+                        <td><b>{{ results.dayLow }} - {{ results.dayHigh }}</b></td>
+                    </tr>
+                    -->
+                    <tr>
+                        <th class="unbold" scope="row">52 Week Range</th>
+                        <td><b>{{ results.week52Low | usd }} - {{ results.week52High | usd }}</b></td>
+                    </tr>
+                    <!--market cap-->
+                    <tr>
+                        <th class="unbold" scope="row">Market Cap</th>
+                        <td><b>{{ results.marketCap | usd }}</b></td>
+                    <tr>
+                        <th class="unbold" scope="row">Avg. Volume</th>
+                        <td><b>{{ results.avgTotalVolume }}</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+            <p>Symbol not found.</p>
+        {% endif %}
+    {% endif %}
+    </div>
+{% endblock %}
