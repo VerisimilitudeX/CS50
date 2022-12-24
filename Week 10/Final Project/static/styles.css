@@ -1,0 +1,491 @@
+/* Size for brand */
+nav .navbar-brand {
+    font-size: xx-large;
+    background-color: #142033;
+}
+
+/* navbar too    background-color: #1e2d44; */
+nav .navbar {
+    background-color: #142033;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue {
+    color: #537fbe;
+}
+
+nav .navbar-brand .red {
+    color: #ea433b;
+}
+
+nav .navbar-brand .yellow {
+    color: #f5b82e;
+}
+
+nav .navbar-brand .green {
+    color: #2e944b;
+}
+
+body {
+    /* bg color gradient centered on #101721 */
+    height: 100%;
+    background: #2f3136;
+    /*
+    background: -moz-linear-gradient(top, #2f3136 0%, #26201f 100%);
+    background: -webkit-linear-gradient(top, #2f3136 0%, #26201f 100%);
+    background: linear-gradient(to bottom, #2f3136 0%, #26201f 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2f3136', endColorstr='#26201f', GradientType=0);
+    */
+    padding-top: 56px;
+    text-color: #ffffff;
+    color: #ffffff;
+}
+
+h1 {
+    color: #ffffff;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 200px;
+}
+
+h3 {
+    color: #ffffff;
+}
+
+.currency {
+    color: #ffffff;
+}
+
+.gray {
+    color: #a9a9a9;
+}
+
+.button {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgba(243, 244, 246, 0.9);
+    background: #1c2333;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button:before {
+    content: "";
+    background: linear-gradient(45deg,
+            #ff0000,
+            #ff7300,
+            #fffb00,
+            #48ff00,
+            #00ffd5,
+            #002bff,
+            #7a00ff,
+            #ff00c8,
+            #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.button:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 15px;
+    background-color: #1c2333;
+}
+
+/* reverse the color gradient animation when hovering */
+.button:active:before {
+    animation: glowing-button-85-reverse 20s linear infinite;
+}
+
+/* override all bootstrap input field styles */
+input {
+    background-color: #18191c;
+    color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    text-color: #ffffff;
+    width: 100%;
+}
+
+input:focus {
+    background-color: #3f4b65;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+input:active {
+    background-color: #3f4b65;
+    color: #ffffff;
+}
+
+input:hover {
+    background-color: #3f4b65;
+    color: #ffffff;
+}
+
+input::placeholder {
+    color: #ffffff;
+}
+
+/* Keyframe animation for the shimmer effect */
+@keyframes shimmer {
+    0% {
+        background-position: -100%;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+.navbar {
+    background-color: #142033;
+    padding: 0;
+    border-radius: 10px;
+    border: 0;
+    /* black line on bottom of navbar */
+    border-bottom: 1px solid black;
+}
+
+.unbold {
+    font-weight: normal;
+}
+
+th.unbold {
+    text-align: left;
+    padding: 5px;
+}
+
+td {
+    text-align: right;
+}
+
+td,
+th {
+    padding: 4px 8px;
+    /* adjust the values as needed */
+    line-height: 1.5;
+    border-spacing: 0 4px;
+    color: #ffffff;
+}
+
+table {
+    width: 80%;
+    width: 200px;
+}
+
+table {
+    width: 200px;
+    max-width: 300px;
+    color: #ffffff;
+}
+
+td,
+th {
+    padding: 5px;
+    text-align: right;
+    color: #ffffff;
+}
+
+th {
+    text-align: left;
+    color: #ffffff;
+}
+
+/* chat window */
+.chat {
+    background-color: #18191c;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    color: #ffffff;
+    /* make them occupy the least space possible but still stacked */
+    display: inline-block;
+    /* align them to the left */
+    float: left;
+    /* center the chat window */
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 0;
+    /* remove from bottom of chat window */
+    position: relative;
+    bottom: 0;
+}
+
+.chat-page {
+    display: flex;
+    flex-direction: row;
+}
+
+.message-box {
+    float: right;
+    width: 30%;
+}
+
+.chat-page {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+}
+
+.chat-page {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #36393f;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    color: #ffffff;
+    width: auto;
+    max-width: 800px;
+    margin-top: -100px;
+    margin-bottom: 100px;
+    /* restrict user from scrolling down too much */
+    overflow-y: auto;
+    /* make the element responsive to screen size */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 320px;
+}
+
+.message-box {
+    /* make the element responsive to screen size */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 100px;
+
+    /* move the element to the bottom of the chat window */
+    position: fixed;
+    bottom: 20px;
+
+    /* add some padding and styling */
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #18191c;
+
+    /* make the element's height flexible */
+    flex: 0 0 auto;
+
+    /* make the element centered horizontally on the screen */
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* animate the element's movement */
+    transition: all 0.5s ease;
+    background-color: #40444b;
+}
+
+
+.send {
+    background-color: #1c2333;
+    border-radius: 10px;
+    padding: 10px;
+    color: #303d59;
+    /* make them occupy the least space possible but still stacked */
+    display: inline-block;
+    /* align them to the left */
+    float: left;
+    /* center the chat window */
+    margin-left: 50px;
+    margin-right: 50px;
+    bottom: 0;
+    /* remove from bottom of chat window */
+    position: relative;
+    bottom: 0;
+    margin-bottom: 300px;
+    margin-top: -7px;
+
+    /* vertically and horizontally center the text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* align input field to the left side of .message-box div */
+    display: inline-block;
+    float: left;
+    /* add some distance between the input field and button */
+    border: none;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+.send:active {
+    background-color: #1c2333;
+    color: #303d59;
+    box-shadow: none;
+    border: none;
+    /*blue line at bottom */
+    border-bottom: 2px solid #22afff;
+}
+
+.send:hover {
+    background-color: #1c2333;
+    color: #dcddde;
+}
+
+.send:focus {
+    background-color: #1c2333;
+    color: #dcddde;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid #22afff;
+}
+
+.send::placeholder {
+    color: #3d4e72;
+}
+
+button {
+    /* align button to the right side of .message-box div */
+    display: inline-block;
+    float: right;
+}
+
+/* Adjust the layout for small screens */
+@media only screen and (max-width: 600px) {
+
+    /* Make the chat messages take up the full width of the screen */
+    .chat-messages {
+        width: 100%;
+    }
+
+    /* Make the message box take up the full width of the screen */
+    .message-box {
+        width: 100%;
+    }
+
+    /* Stack the recipient and message input fields vertically */
+    .message-box input {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+tr {
+    background-color: #18191c;
+    border-radius: 10px;
+    padding: 10px;
+    color: #ffffff;
+    /* make them occupy the least space possible but still stacked */
+    display: inline-block;
+    /* align them to the left */
+    float: left;
+    /* center the chat window */
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 0;
+    /* remove from bottom of chat window */
+    position: relative;
+    bottom: 0;
+    display: flex;
+    margin: 10px 0;
+}
+
+.chat-messages,
+.message {
+    animation: slide 0.5s ease-in-out;
+    align-items: left;
+    align-content: left;
+    justify-content: left;
+    justify-items: left;
+    align: 50px;
+    text-align: left;
+    width: 100%;
+}
+
+.chat-messages {
+    margin: 20px;
+    margin-top: 400px;
+    text-align: left;
+}
+
+/* modern, rounded scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #18191c
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #999999;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #d6d6d6;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: #e5e5e5;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #18191c;
+}
+
+::-webkit-scrollbar-track:hover {
+    background-color: #18191c;
+}
+
+::-webkit-scrollbar-track:active {
+    background-color: #18191c;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: #18191c;
+}
+
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
