@@ -19,7 +19,7 @@ Harvard's CS50x 2022 - Labs and PSets
 
 ###### I'll be pleased to answer any questions you may have, so if you do have one, _hit me up on [Discussions](https://github.com/Verisimilitude11/CS50x/discussions)!_
 
-I know it's cliché but please leave a star :star: if you found this helpful!
+Please leave a star :star: if you found this helpful!
 
 Table Of Contents
 -----------------
