@@ -24,17 +24,12 @@ Please leave a star :star: if you found this helpful!
 Table Of Contents
 -----------------
 
-* [Week 0: Scratch:video\_game:](/0-Scratch) - [PSet Instructions](https://cs50.harvard.edu/x/2022/PSets/0/scratch/)
-
-  * [F1 Game](https://scratch.mit.edu/projects/717016087/) (if you feel like playing it!)
+* [Week 0: Scratch:video\_game:](Week 0/Problem Set 0/RoamingCat.sb3) - [PSet Instructions](https://cs50.harvard.edu/x/2022/PSets/0/scratch/)
 * [Week 1: C](/1-C/) - [PSet Instructions](https://cs50.harvard.edu/x/2022/PSets/1/)
-
-  * [hello:wave:](/1-C/hello)
+  * [hello:wave:](Week 1/Problem Set 1/hello/hello.c)
   * mario:bricks:
-    * [less](/1-C/mario/mario-less)
-    * [more](/1-C/mario/mario-more/)
-  * [cash:moneybag:](/1-C/cash)
-  * [credit:credit\_card:](/1-C/credit)
+    * [more](Week 1/Problem Set 1/mario-more/mario-more.c)
+  * [credit:credit\_card:](Week 1/Problem Set 1/credit/credit.c)
 * [Week 2: Arrays](/2-Arrays/) - [PSet Instructions](https://cs50.harvard.edu/x/2022/PSets/2/)
 
   * [Lab 2: scrabble:capital\_abcd:](/2-Arrays/Lab-scrabble) - [Lab Instructions](https://cs50.harvard.edu/x/2022/Labs/2/)
