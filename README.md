@@ -6,18 +6,14 @@ This is CS50, Harvard University's introduction to the intellectual enterprises 
 Disclaimer
 ----------
 
-> A quick word on [Academic Honesty](https://cs50.harvard.edu/x/2022/honesty/). While these solutions will help you to get through the course without too much effort, you should do your best to figure out a working solution yourself before taking a look at any of my solutions. Investing your time and energy into solving the problem sets yourself is in my opinion the only way to eventual mastery. Go ahead and take a peek at the solutions, and remember to have fun.
+> A quick word on [Academic Honesty](https://cs50.harvard.edu/x/2023/honesty/). While these solutions will help you to get through the course without too much effort, you should do your best to figure out a working solution yourself before taking a look at any of my solutions. Investing your time and energy into solving the problem sets yourself is in my opinion the only way to eventual mastery. Go ahead and take a peek at the solutions, and remember to have fun.
 
-CS50x 2022 - Introduction To Computer Science
+CS50x 2023 - Introduction To Computer Science
 ---------------------------------------------
 
-Harvard's CS50x 2022 - Labs and PSets
-
-> This repo was built to display my solutions to Harvard's [CS50x](https://cs50.harvard.edu/x/2022/). You'll be redirected either to **my solutions** by clicking on the name of the project or the **CS50's implementation details and instructions** by clicking on _Lab_ or _PSet Instructions_.
+Harvard's CS50x 2023 - Labs and PSets
 
 #### Every Lab and PSet achieved 100% when submitted
-
-###### I'll be pleased to answer any questions you may have, so if you do have one, _hit me up on [Discussions](https://github.com/Verisimilitude11/CS50x/discussions)!_
 
 Please leave a star :star: if you found this helpful!
 
