@@ -72,4 +72,4 @@ Table Of Contents
 * [Week 8: HTML/CSS/Javascript](8-HTML-CSS-Javascript/) - [PSet Instructions](https://cs50.harvard.edu/x/2022/PSets/8/)
 
   * [Lab 8: trivia](/8-HTML-CSS-Javascript/Lab-trivia)
-  * Working on it! :zany\_face:
+  * Working on it!
