@@ -25,9 +25,6 @@ def index():
         )
 
         return redirect("/")
-
-    # User reached route via GET (as by clicking a link or via redirect)
-    else:
-        # Display the entries in the database on index.html
-        notes = db.execute("SELECT * FROM birthdays")
-        return render_template("index.html", notes=notes)
+    # Display the entries in the database on index.html
+    notes = db.execute("SELECT * FROM birthdays")
+    return render_template("index.html", notes=notes)
