@@ -8,14 +8,14 @@ words = 1
 sentences = 0
 
 if text:
-    for i in range(len(text)):
-        if (text[i].isalpha()):
+    for i, item in enumerate(text):
+        if (item.isalpha()):
             alphas += 1
-        elif (text[i].isnumeric()):
+        elif (item.isnumeric()):
             digits += 1
-        elif (text[i] == "?" or text[i] == "!" or text[i] == "."):
+        elif (item == "?" or item == "!" or item == "."):
             sentences += 1
-        elif (text[i] == " " and text[i + 1]):
+        elif (item == " " and text[i + 1]):
             words += 1
         else:
             special_characters += 1

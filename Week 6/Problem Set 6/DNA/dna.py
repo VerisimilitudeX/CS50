@@ -47,9 +47,9 @@ def main():
         count = 0
 
         # iterate over the strings of the sequences
-        for j in range(len(dnafile[s])):
+        for j, item in enumerate(dnafile[s]):
             # check if the strings match
-            if result[j] == int(dnafile[s][j]):
+            if result[j] == int(item):
                 # if they do, increase the counter
                 count += 1
 
