@@ -1,12 +1,19 @@
 import os
+from tempfile import mkdtemp
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
-from tempfile import mkdtemp
+from helpers import (
+    apology,
+    format_money,
+    format_time,
+    get_time,
+    login_required,
+    lookup,
+    usd,
+)
 from werkzeug.security import check_password_hash, generate_password_hash
-
-from helpers import apology, login_required, lookup, usd, get_time, format_time, format_money
 
 # Configure application
 app = Flask(__name__)
@@ -26,7 +33,6 @@ Session(app)
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///finance.db")
-
 """
 # Make sure API key is set
 if not os.environ.get("API_KEY"):
@@ -57,7 +63,6 @@ def login():
 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
-
         # Ensure username was submitted
         if not request.form.get("username"):
             return apology("must provide username", 403)
@@ -67,11 +72,14 @@ def login():
             return apology("must provide password", 403)
 
         # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?",
-                          request.form.get("username"))
+        rows = db.execute(
+            "SELECT * FROM users WHERE username = ?", request.form.get("username")
+        )
 
         # Ensure username exists and password is correct
-        if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
+        if len(rows) != 1 or not check_password_hash(
+            rows[0]["hash"], request.form.get("password")
+        ):
             return apology("invalid username and/or password", 403)
 
         # Remember which user has logged in
@@ -115,12 +123,17 @@ def register():
 
         # Check if the username is available
         check = db.execute(
-            "SELECT * FROM users WHERE username=?", request.form.get("username"))
+            "SELECT * FROM users WHERE username=?", request.form.get("username")
+        )
         if len(check) != 0:
             return apology("username not available")
 
-        db.execute("INSERT INTO users (username, hash, cash) VALUES(?, ?, ?)",
-                   request.form.get("username"), generate_password_hash(request.form.get("confirmation")), 10000.0)
+        db.execute(
+            "INSERT INTO users (username, hash, cash) VALUES(?, ?, ?)",
+            request.form.get("username"),
+            generate_password_hash(request.form.get("confirmation")),
+            10000.0,
+        )
 
         # Redirect user to home page
         return redirect("/")
@@ -142,21 +155,29 @@ def messages():
 
         # Check if the recipient exists
         check = db.execute(
-            "SELECT * FROM users WHERE username=?", request.form.get("recipient"))
+            "SELECT * FROM users WHERE username=?", request.form.get("recipient")
+        )
         if len(check) != 1:
-            return apology("recipient does not exist")\
+            return apology("recipient does not exist")
 
         # get last message id
-        last_id = db.execute(
-            "SELECT id FROM messages ORDER BY id DESC LIMIT 1")
+        last_id = db.execute("SELECT id FROM messages ORDER BY id DESC LIMIT 1")
         if last_id == []:
             last_id = [{"id": 0}]
 
         # Insert the message into the database
-        db.execute("INSERT INTO messages (message, time, id) VALUES(?, ?, ?)",
-                   request.form.get("message"), get_time(), last_id[0]["id"] + 1)
-        db.execute("INSERT INTO message_info (message_id, sender, recipient) VALUES(?, ?, ?)",
-                   last_id[0]["id"] + 1, session["user_id"], check[0]["id"])
+        db.execute(
+            "INSERT INTO messages (message, time, id) VALUES(?, ?, ?)",
+            request.form.get("message"),
+            get_time(),
+            last_id[0]["id"] + 1,
+        )
+        db.execute(
+            "INSERT INTO message_info (message_id, sender, recipient) VALUES(?, ?, ?)",
+            last_id[0]["id"] + 1,
+            session["user_id"],
+            check[0]["id"],
+        )
 
         # say message sent
         flash("Message sent!")
@@ -165,7 +186,10 @@ def messages():
         return redirect("/messages")
     # get all messages and the usernames of the senders including ones that the user sent
     messages = db.execute(
-        "SELECT messages.message, messages.time, users.username FROM messages JOIN message_info ON messages.id = message_info.message_id JOIN users ON message_info.sender = users.id WHERE message_info.recipient = ? OR message_info.sender = ? ORDER BY messages.time DESC", session["user_id"], session["user_id"])
+        "SELECT messages.message, messages.time, users.username FROM messages JOIN message_info ON messages.id = message_info.message_id JOIN users ON message_info.sender = users.id WHERE message_info.recipient = ? OR message_info.sender = ? ORDER BY messages.time DESC",
+        session["user_id"],
+        session["user_id"],
+    )
     return render_template("messages.html", messages=messages)
 
 

@@ -1,12 +1,19 @@
 import os
+from tempfile import mkdtemp
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
-from tempfile import mkdtemp
+from helpers import (
+    apology,
+    format_money,
+    format_time,
+    get_time,
+    login_required,
+    lookup,
+    usd,
+)
 from werkzeug.security import check_password_hash, generate_password_hash
-
-from helpers import apology, login_required, lookup, usd, get_time, format_time, format_money
 
 # Configure application
 app = Flask(__name__)
@@ -45,9 +52,12 @@ def after_request(response):
 @login_required
 def index():
     totalBalance = balance = db.execute(
-        "SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
+        "SELECT cash FROM users WHERE id = ?", session["user_id"]
+    )[0]["cash"]
     portfolio = db.execute(
-        "SELECT symbol, SUM(quantity) FROM transactions WHERE u_id=? GROUP BY symbol", session["user_id"])
+        "SELECT symbol, SUM(quantity) FROM transactions WHERE u_id=? GROUP BY symbol",
+        session["user_id"],
+    )
     prices = []
 
     for i, owned in enumerate(portfolio):
@@ -55,7 +65,13 @@ def index():
         prices.append(temp)
         totalBalance += portfolio[i]["SUM(quantity)"] * prices[i]
 
-    return render_template("index.html", port=portfolio, prices=prices, balance=balance, total_bal=totalBalance)
+    return render_template(
+        "index.html",
+        port=portfolio,
+        prices=prices,
+        balance=balance,
+        total_bal=totalBalance,
+    )
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -74,17 +90,24 @@ def buy():
             return apology("symbol not found", 400)
 
         price = symbol["price"]
-        balance = db.execute(
-            "SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
+        balance = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[
+            0
+        ]["cash"]
 
         new_balance = balance - (price * float(request.form.get("shares")))
 
         if new_balance < 0:
             return apology("not enough money")
-        db.execute("UPDATE users SET cash = ? WHERE id = ?",
-                   new_balance, session["user_id"])
-        db.execute("INSERT INTO transactions (symbol, quantity, price, u_id) VALUES(?, ?, ?, ?)",
-                   request.form.get("symbol"), float(request.form.get("shares")), price, session["user_id"])
+        db.execute(
+            "UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"]
+        )
+        db.execute(
+            "INSERT INTO transactions (symbol, quantity, price, u_id) VALUES(?, ?, ?, ?)",
+            request.form.get("symbol"),
+            float(request.form.get("shares")),
+            price,
+            session["user_id"],
+        )
         return redirect("/")
 
     return render_template("buy.html")
@@ -94,7 +117,9 @@ def buy():
 @login_required
 def history():
     portfolio = db.execute(
-        "SELECT t_id, symbol, quantity, price, u_id FROM transactions WHERE u_id=? ORDER BY t_id DESC", session["user_id"])
+        "SELECT t_id, symbol, quantity, price, u_id FROM transactions WHERE u_id=? ORDER BY t_id DESC",
+        session["user_id"],
+    )
 
     return render_template("history.html", port=portfolio)
 
@@ -108,7 +133,6 @@ def login():
 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
-
         # Ensure username was submitted
         if not request.form.get("username"):
             return apology("must provide username", 403)
@@ -118,11 +142,14 @@ def login():
             return apology("must provide password", 403)
 
         # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?",
-                          request.form.get("username"))
+        rows = db.execute(
+            "SELECT * FROM users WHERE username = ?", request.form.get("username")
+        )
 
         # Ensure username exists and password is correct
-        if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
+        if len(rows) != 1 or not check_password_hash(
+            rows[0]["hash"], request.form.get("password")
+        ):
             return apology("invalid username and/or password", 403)
 
         # Remember which user has logged in
@@ -155,7 +182,9 @@ def quote():
         if not result:
             return apology("symbol not found")
         time = get_time()
-        return render_template("quote.html", results=result, currTime=time, submitted=submitted)
+        return render_template(
+            "quote.html", results=result, currTime=time, submitted=submitted
+        )
     return render_template("quote.html", results=None)
 
 
@@ -181,12 +210,17 @@ def register():
 
         # Check if the username is available
         check = db.execute(
-            "SELECT * FROM users WHERE username=?", request.form.get("username"))
+            "SELECT * FROM users WHERE username=?", request.form.get("username")
+        )
         if len(check) != 0:
             return apology("username not available")
 
-        db.execute("INSERT INTO users (username, hash, cash) VALUES(?, ?, ?)",
-                   request.form.get("username"), generate_password_hash(request.form.get("confirmation")), 10000.0)
+        db.execute(
+            "INSERT INTO users (username, hash, cash) VALUES(?, ?, ?)",
+            request.form.get("username"),
+            generate_password_hash(request.form.get("confirmation")),
+            10000.0,
+        )
 
         # Redirect user to home page
         return redirect("/")
@@ -197,7 +231,9 @@ def register():
 @login_required
 def sell():
     portfolio = db.execute(
-        "SELECT symbol, SUM(quantity) FROM transactions WHERE u_id=? GROUP BY symbol", session["user_id"])
+        "SELECT symbol, SUM(quantity) FROM transactions WHERE u_id=? GROUP BY symbol",
+        session["user_id"],
+    )
 
     if request.method == "POST":
         if not request.form.get("symbol"):
@@ -210,18 +246,28 @@ def sell():
         if not request.form.get("shares").isdigit():
             return apology("shares must be a number", 403)
 
-        if int(request.form.get("shares")) > portfolio[int(request.form.get("symbol"))]["SUM(quantity)"]:
+        if (
+            int(request.form.get("shares"))
+            > portfolio[int(request.form.get("symbol"))]["SUM(quantity)"]
+        ):
             return apology("not enough shares owned", 403)
 
-        balance = db.execute(
-            "SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
+        balance = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[
+            0
+        ]["cash"]
         symbol = portfolio[int(request.form.get("symbol"))]["symbol"]
         price = lookup(symbol)["price"]
-        new_balance = balance + (int(request.form.get("shares"))*price)
-        db.execute("UPDATE users SET cash = ? WHERE id = ?",
-                   new_balance, session["user_id"])
-        db.execute("INSERT INTO transactions (symbol, quantity, price, u_id) VALUES(?, ?, ?, ?)",
-                   symbol, -int(request.form.get("shares")), price, session["user_id"])
+        new_balance = balance + (int(request.form.get("shares")) * price)
+        db.execute(
+            "UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"]
+        )
+        db.execute(
+            "INSERT INTO transactions (symbol, quantity, price, u_id) VALUES(?, ?, ?, ?)",
+            symbol,
+            -int(request.form.get("shares")),
+            price,
+            session["user_id"],
+        )
 
         return redirect("/")
 
