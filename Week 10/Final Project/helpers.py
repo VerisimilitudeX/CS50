@@ -144,8 +144,6 @@ def format_time(time):
     return dt.strftime("%I:%M %p %Z").lstrip("0")
 
 
-
-
 def format_money(value):
     if value >= 1000000000:
         return f"{value / 1000000000:.2f}B"
