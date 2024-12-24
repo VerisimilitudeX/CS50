@@ -11,9 +11,9 @@
  * Adapted from http://msdn.microsoft.com/en-us/library/cc230309.aspx.
  * See http://en.wikipedia.org/wiki/Stdint.h for more on stdint.h.
  */
-typedef uint8_t  BYTE;
+typedef uint8_t BYTE;
 typedef uint32_t DWORD;
-typedef int32_t  LONG;
+typedef int32_t LONG;
 typedef uint16_t WORD;
 
 /**
@@ -24,15 +24,13 @@ typedef uint16_t WORD;
  *
  * Adapted from http://msdn.microsoft.com/en-us/library/dd183374(VS.85).aspx.
  */
-typedef struct
-{
-    WORD   bfType;
-    DWORD  bfSize;
-    WORD   bfReserved1;
-    WORD   bfReserved2;
-    DWORD  bfOffBits;
-} __attribute__((__packed__))
-BITMAPFILEHEADER;
+typedef struct {
+  WORD bfType;
+  DWORD bfSize;
+  WORD bfReserved1;
+  WORD bfReserved2;
+  DWORD bfOffBits;
+} __attribute__((__packed__)) BITMAPFILEHEADER;
 
 /**
  * BITMAPINFOHEADER
@@ -42,21 +40,19 @@ BITMAPFILEHEADER;
  *
  * Adapted from http://msdn.microsoft.com/en-us/library/dd183376(VS.85).aspx.
  */
-typedef struct
-{
-    DWORD  biSize;
-    LONG   biWidth;
-    LONG   biHeight;
-    WORD   biPlanes;
-    WORD   biBitCount;
-    DWORD  biCompression;
-    DWORD  biSizeImage;
-    LONG   biXPelsPerMeter;
-    LONG   biYPelsPerMeter;
-    DWORD  biClrUsed;
-    DWORD  biClrImportant;
-} __attribute__((__packed__))
-BITMAPINFOHEADER;
+typedef struct {
+  DWORD biSize;
+  LONG biWidth;
+  LONG biHeight;
+  WORD biPlanes;
+  WORD biBitCount;
+  DWORD biCompression;
+  DWORD biSizeImage;
+  LONG biXPelsPerMeter;
+  LONG biYPelsPerMeter;
+  DWORD biClrUsed;
+  DWORD biClrImportant;
+} __attribute__((__packed__)) BITMAPINFOHEADER;
 
 /**
  * RGBTRIPLE
@@ -66,10 +62,8 @@ BITMAPINFOHEADER;
  *
  * Adapted from http://msdn.microsoft.com/en-us/library/aa922590.aspx.
  */
-typedef struct
-{
-    BYTE  rgbtBlue;
-    BYTE  rgbtGreen;
-    BYTE  rgbtRed;
-} __attribute__((__packed__))
-RGBTRIPLE;
+typedef struct {
+  BYTE rgbtBlue;
+  BYTE rgbtGreen;
+  BYTE rgbtRed;
+} __attribute__((__packed__)) RGBTRIPLE;
