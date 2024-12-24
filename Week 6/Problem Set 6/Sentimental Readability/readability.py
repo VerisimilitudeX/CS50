@@ -9,13 +9,13 @@ sentences = 0
 
 if text:
     for i, item in enumerate(text):
-        if (item.isalpha()):
+        if item.isalpha():
             alphas += 1
-        elif (item.isnumeric()):
+        elif item.isnumeric():
             digits += 1
-        elif (item == "?" or item == "!" or item == "."):
+        elif item == "?" or item == "!" or item == ".":
             sentences += 1
-        elif (item == " " and text[i + 1]):
+        elif item == " " and text[i + 1]:
             words += 1
         else:
             special_characters += 1
@@ -26,9 +26,9 @@ if text:
     # Calculate readability
     index = round((float)(0.0588 * letters - 0.296 * sentences - 15.8))
 
-    if (index >= 16):
+    if index >= 16:
         print("Grade 16+")
-    elif (index < 1):
+    elif index < 1:
         print("Before Grade 1")
     else:
         print("Grade", index)
