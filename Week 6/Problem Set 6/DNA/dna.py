@@ -84,7 +84,7 @@ def longest_match(sequence, subsequence):
             # Adjust substring start and end
             start = i + count * subsequence_length
             end = start + subsequence_length
- 
+
             # If there is a match in the substring
             if sequence[start:end] == subsequence:
                 count += 1
