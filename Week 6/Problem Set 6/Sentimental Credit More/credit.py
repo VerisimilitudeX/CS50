@@ -57,7 +57,7 @@ elif lastdigit != 0:
     valid = True
 
 # If the card is valid, then find which company made it
-if valid == True and len(str(number)) >= 13:
+if valid is True and len(str(number)) >= 13:
     # Check if it is an American Express card
     if beginning2 == 34 or beginning2 == 37:
         print("AMEX")
