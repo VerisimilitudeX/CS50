@@ -20,8 +20,7 @@ def main():
             # If we are on the first line
             if index == 0:
                 # Get the names of each sequence
-                sequences = [
-                    sequence for sequence in row.strip().split(",")][1:]
+                sequences = list(row.strip().split(","))[1:]
                 # Otherwise
             else:
                 # Get the name of the DNA sequence
