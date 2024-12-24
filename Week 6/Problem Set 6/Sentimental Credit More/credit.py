@@ -36,21 +36,21 @@ for j in range(index, -2, -1):
         others.append(int(str(number)[j]))
 
 # Split numbers that are 2 digits into 2 numbers
-for i in range(len(everyotherdig)):
-    if len(str(everyotherdig[i])) == 2:
-        everyotherdig.append(int(str(everyotherdig[i])[0]))
-        everyotherdig.append(int(str(everyotherdig[i])[1]))
+for i, item in enumerate(everyotherdig):
+    if len(str(item)) == 2:
+        everyotherdig.append(int(str(item)[0]))
+        everyotherdig.append(int(str(item)[1]))
         everyotherdig.pop(i)
 
 # Add all the numbers in the list together
 sumdigits = 0
-for i in range(len(everyotherdig)):
-    sumdigits += everyotherdig[i]
+for i, item in enumerate(everyotherdig):
+    sumdigits += item
 
 # Add that sum to the digits that weren't multiplied by 2
 othersum = 0
-for i in range(len(others)):
-    othersum += others[i]
+for i, item in enumerate(others):
+    othersum += item
 
 finalsum = sumdigits + othersum
 
