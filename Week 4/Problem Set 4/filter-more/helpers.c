@@ -116,9 +116,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width]) {
         }
       }
       // Calculate Sobel operator
-      int red = round(sqrtf(Gx_red * Gx_red + Gy_red * Gy_red));
-      int green = round(sqrtf(Gx_green * Gx_green + Gy_green * Gy_green));
-      int blue = round(sqrtf(Gx_blue * Gx_blue + Gy_blue * Gy_blue));
+      int red = roundf(sqrtf(Gx_red * Gx_red + Gy_red * Gy_red));
+      int green = roundf(sqrtf(Gx_green * Gx_green + Gy_green * Gy_green));
+      int blue = roundf(sqrtf(Gx_blue * Gx_blue + Gy_blue * Gy_blue));
       // Cap at 255
       if (red > 255) {
         red = 255;
