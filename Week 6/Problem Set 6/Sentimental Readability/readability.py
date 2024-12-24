@@ -1,4 +1,5 @@
 from cs50 import get_string
+import sys
 
 text = get_string("Text: ")
 alphas = 0
@@ -33,4 +34,4 @@ if text:
     else:
         print("Grade", index)
 
-    exit()
+    sys.exit()

@@ -1,4 +1,5 @@
 from cs50 import get_int
+import sys
 
 # Prompt the user for the credit card number (assume that the user enters only a number)
 number = get_int("Number: ")
@@ -10,7 +11,7 @@ beginning1 = int(str(number)[:1])
 # Check if the credit card is valid
 if (not (beginning2 == 34 or beginning2 == 37 or beginning1 == 4 or beginning1 == 5 or beginning1 == 6)):
     print("INVALID")
-    exit()
+    sys.exit()
 
 # Vars
 product = 0
@@ -61,17 +62,17 @@ if valid == True and len(str(number)) >= 13:
     # Check if it is an American Express card
     if beginning2 == 34 or beginning2 == 37:
         print("AMEX")
-        exit()
+        sys.exit()
     # Check if it is a MasterCard
     elif beginning2 == 51 or beginning2 == 52 or beginning2 == 53 or beginning2 == 54 or beginning2 == 55:
         print("MASTERCARD")
-        exit()
+        sys.exit()
     # Check if it is a Visa card
     elif beginning1 == 4:
         print("VISA")
-        exit()
+        sys.exit()
     else:
         print("INVALID")
-        exit()
+        sys.exit()
 
 print("INVALID")
