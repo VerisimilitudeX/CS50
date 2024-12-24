@@ -1,5 +1,4 @@
 import os
-from tempfile import mkdtemp
 
 from cs50 import SQL
 from flask import Flask, redirect, render_template, request, session
