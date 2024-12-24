@@ -74,9 +74,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     counter++;
                 }
             }
-            image[i][j].rgbtRed = round(sum_red / counter);
-            image[i][j].rgbtGreen = round(sum_green / counter);
-            image[i][j].rgbtBlue = round(sum_blue / counter);
+            image[i][j].rgbtRed = roundf(sum_red / counter);
+            image[i][j].rgbtGreen = roundf(sum_green / counter);
+            image[i][j].rgbtBlue = roundf(sum_blue / counter);
         }
     }
     return;
@@ -136,9 +136,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
             // Calculate Sobel operator
-            int red = round(sqrt(Gx_red * Gx_red + Gy_red * Gy_red));
-            int green = round(sqrt(Gx_green * Gx_green + Gy_green * Gy_green));
-            int blue = round(sqrt(Gx_blue * Gx_blue + Gy_blue * Gy_blue));
+            int red = round(sqrtf(Gx_red * Gx_red + Gy_red * Gy_red));
+            int green = round(sqrtf(Gx_green * Gx_green + Gy_green * Gy_green));
+            int blue = round(sqrtf(Gx_blue * Gx_blue + Gy_blue * Gy_blue));
             // Cap at 255
             if (red > 255)
             {
