@@ -65,7 +65,7 @@ def buy():
         if not request.form.get("symbol"):
             return apology("symbol cannot be blank", 400)
 
-        elif not request.form.get("shares") or 0 > float(request.form.get("shares")):
+        elif not request.form.get("shares") or float(request.form.get("shares")) < 0:
             return apology("shares cannot be empty/negative", 400)
 
         symbol = lookup(request.form.get("symbol"))
@@ -210,7 +210,7 @@ def sell():
         if not request.form.get("symbol"):
             return apology("please select what to sell", 403)
 
-        if not request.form.get("shares") or 0 > int(request.form.get("shares")):
+        if not request.form.get("shares") or int(request.form.get("shares")) < 0:
             return apology("shares cannot be empty or negative", 403)
 
         # check if it's a number
