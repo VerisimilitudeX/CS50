@@ -1,9 +1,7 @@
-import csv
 import sys
 
 
 def main():
-
     # TODO: Check for command-line usage
     if len(sys.argv) != 3:
         print("Usage: python dna.py data.csv sequence.txt")
@@ -20,8 +18,7 @@ def main():
             # If we are on the first line
             if index == 0:
                 # Get the names of each sequence
-                sequences = [
-                    sequence for sequence in row.strip().split(",")][1:]
+                sequences = [sequence for sequence in row.strip().split(",")][1:]
                 # Otherwise
             else:
                 # Get the name of the DNA sequence
@@ -31,7 +28,7 @@ def main():
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2], "r") as txtfile:
-        sequence = txtfile.read().replace('\n', '')
+        sequence = txtfile.read().replace("\n", "")
 
     # TODO: Find longest match of each STR in DNA sequence
     # initiate a "result" list to save results from "longest_match"
@@ -72,7 +69,6 @@ def longest_match(sequence, subsequence):
 
     # Check each character in sequence for most consecutive runs of subsequence
     for i in range(sequence_length):
-
         # Initialize count of consecutive runs
         count = 0
 
@@ -80,16 +76,15 @@ def longest_match(sequence, subsequence):
         # If a match, move substring to next potential match in sequence
         # Continue moving substring and checking for matches until out of consecutive matches
         while True:
-
             # Adjust substring start and end
             start = i + count * subsequence_length
             end = start + subsequence_length
- 
+
             # If there is a match in the substring
             if sequence[start:end] == subsequence:
                 count += 1
 
-            # If there is no match in the substring 
+            # If there is no match in the substring
             else:
                 break
 

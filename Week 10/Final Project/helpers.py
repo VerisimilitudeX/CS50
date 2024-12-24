@@ -1,24 +1,34 @@
-import os
-import requests
-import urllib.parse
 import datetime
-
-from flask import redirect, render_template, request, session
+import os
+import urllib.parse
 from functools import wraps
+
+import requests
+from flask import redirect, render_template, session
 
 
 def apology(message, code=400):
     """Render message as an apology to user."""
+
     def escape(s):
         """
         Escape special characters.
 
         https://github.com/jacebrowning/memegen#special-characters
         """
-        for old, new in [("-", "--"), (" ", "-"), ("_", "__"), ("?", "~q"),
-                         ("%", "~p"), ("#", "~h"), ("/", "~s"), ("\"", "''")]:
+        for old, new in [
+            ("-", "--"),
+            (" ", "-"),
+            ("_", "__"),
+            ("?", "~q"),
+            ("%", "~p"),
+            ("#", "~h"),
+            ("/", "~s"),
+            ('"', "''"),
+        ]:
             s = s.replace(old, new)
         return s
+
     return render_template("apology.html", top=code, bottom=escape(message)), code
 
 
@@ -28,11 +38,13 @@ def login_required(f):
 
     http://flask.pocoo.org/docs/0.12/patterns/viewdecorators/
     """
+
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if session.get("user_id") is None:
             return redirect("/login")
         return f(*args, **kwargs)
+
     return decorated_function
 
 
@@ -107,7 +119,7 @@ def lookup(symbol):
             "week52High": quote["week52High"],
             "week52Low": quote["week52Low"],
             "ytdChange": quote["ytdChange"],
-            "isUSMarketOpen": quote["isUSMarketOpen"]
+            "isUSMarketOpen": quote["isUSMarketOpen"],
         }
     except (KeyError, TypeError, ValueError):
         return None
@@ -130,7 +142,9 @@ def format_time(time):
     dt = datetime.datetime.fromtimestamp(timestamp / 1000)
     # prints the time in 12-hour format with AM/PM and the time zone abbreviation
     return dt.strftime("%I:%M %p %Z").lstrip("0")
-   # return datetime.datetime.fromtimestamp(time / 1000).strftime("%B %d, %I:%M %p")
+
+
+# return datetime.datetime.fromtimestamp(time / 1000).strftime("%B %d, %I:%M %p")
 
 
 def format_money(value):
