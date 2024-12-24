@@ -81,7 +81,7 @@ def buy():
         if not request.form.get("symbol"):
             return apology("symbol cannot be blank", 400)
 
-        elif not request.form.get("shares") or float(request.form.get("shares")) < 0:
+        if not request.form.get("shares") or float(request.form.get("shares")) < 0:
             return apology("shares cannot be empty/negative", 400)
 
         symbol = lookup(request.form.get("symbol"))
@@ -98,21 +98,19 @@ def buy():
 
         if new_balance < 0:
             return apology("not enough money")
-
-        else:
-            db.execute(
-                "UPDATE users SET cash = ? WHERE id = ?",
-                new_balance,
-                session["user_id"],
-            )
-            db.execute(
-                "INSERT INTO transactions (symbol, quantity, price, u_id) VALUES(?, ?, ?, ?)",
-                request.form.get("symbol"),
-                float(request.form.get("shares")),
-                price,
-                session["user_id"],
-            )
-            return redirect("/")
+        db.execute(
+            "UPDATE users SET cash = ? WHERE id = ?",
+            new_balance,
+            session["user_id"],
+        )
+        db.execute(
+            "INSERT INTO transactions (symbol, quantity, price, u_id) VALUES(?, ?, ?, ?)",
+            request.form.get("symbol"),
+            float(request.form.get("shares")),
+            price,
+            session["user_id"],
+        )
+        return redirect("/")
 
     return render_template("buy.html")
 
@@ -161,10 +159,7 @@ def login():
 
         # Redirect user to home page
         return redirect("/")
-
-    # User reached route via GET (as by clicking a link or via redirect)
-    else:
-        return render_template("login.html")
+    return render_template("login.html")
 
 
 @app.route("/logout")
@@ -231,9 +226,7 @@ def register():
 
         # Redirect user to home page
         return redirect("/")
-
-    else:
-        return render_template("register.html")
+    return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
