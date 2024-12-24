@@ -144,7 +144,6 @@ def format_time(time):
     return dt.strftime("%I:%M %p %Z").lstrip("0")
 
 
-# return datetime.datetime.fromtimestamp(time / 1000).strftime("%B %d, %I:%M %p")
 
 
 def format_money(value):
