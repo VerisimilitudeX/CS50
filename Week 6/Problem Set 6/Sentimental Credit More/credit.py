@@ -48,7 +48,7 @@ finalsum = sumdigits + othersum
 
 # Check if the last digit in the sum is 0
 valid = True
-lastdigit = int(str(finalsum)[len(str(finalsum)) - 1])
+lastdigit = int(str(finalsum)[-1])
 
 if lastdigit == 0:
     # If yes, then the credit card number passes the checksum
