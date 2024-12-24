@@ -136,7 +136,6 @@ def format_time(time):
 def format_money(value):
     if value >= 1000000000:
         return f"{value / 1000000000:.2f}B"
-    elif value >= 1000000:
+    if value >= 1000000:
         return f"{value / 1000000:.2f}M"
-    else:
-        return value
+    return value

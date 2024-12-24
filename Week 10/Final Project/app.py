@@ -79,10 +79,7 @@ def login():
 
         # Redirect user to home page
         return redirect("/")
-
-    # User reached route via GET (as by clicking a link or via redirect)
-    else:
-        return render_template("login.html")
+    return render_template("login.html")
 
 
 @app.route("/logout")
@@ -127,9 +124,7 @@ def register():
 
         # Redirect user to home page
         return redirect("/")
-
-    else:
-        return render_template("register.html")
+    return render_template("register.html")
 
 
 @app.route("/messages", methods=["GET", "POST"])
@@ -168,12 +163,10 @@ def messages():
 
         # refresh the page
         return redirect("/messages")
-
-    else:
-        # get all messages and the usernames of the senders including ones that the user sent
-        messages = db.execute(
-            "SELECT messages.message, messages.time, users.username FROM messages JOIN message_info ON messages.id = message_info.message_id JOIN users ON message_info.sender = users.id WHERE message_info.recipient = ? OR message_info.sender = ? ORDER BY messages.time DESC", session["user_id"], session["user_id"])
-        return render_template("messages.html", messages=messages)
+    # get all messages and the usernames of the senders including ones that the user sent
+    messages = db.execute(
+        "SELECT messages.message, messages.time, users.username FROM messages JOIN message_info ON messages.id = message_info.message_id JOIN users ON message_info.sender = users.id WHERE message_info.recipient = ? OR message_info.sender = ? ORDER BY messages.time DESC", session["user_id"], session["user_id"])
+    return render_template("messages.html", messages=messages)
 
 
 def errorhandler(e):
