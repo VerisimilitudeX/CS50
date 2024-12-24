@@ -8,7 +8,13 @@ beginning2 = int(str(number)[:2])
 beginning1 = int(str(number)[:1])
 
 # Check if the credit card is valid
-if not (beginning2 == 34 or beginning2 == 37 or beginning1 == 4 or beginning1 == 5 or beginning1 == 6):
+if not (
+    beginning2 == 34
+    or beginning2 == 37
+    or beginning1 == 4
+    or beginning1 == 5
+    or beginning1 == 6
+):
     print("INVALID")
     exit()
 
@@ -63,7 +69,13 @@ if valid == True and len(str(number)) >= 13:
         print("AMEX")
         exit()
     # Check if it is a MasterCard
-    elif beginning2 == 51 or beginning2 == 52 or beginning2 == 53 or beginning2 == 54 or beginning2 == 55:
+    elif (
+        beginning2 == 51
+        or beginning2 == 52
+        or beginning2 == 53
+        or beginning2 == 54
+        or beginning2 == 55
+    ):
         print("MASTERCARD")
         exit()
     # Check if it is a Visa card

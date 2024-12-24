@@ -13,9 +13,9 @@ if text:
             alphas += 1
         elif text[i].isnumeric():
             digits += 1
-        elif (text[i] == "?" or text[i] == "!" or text[i] == "."):
+        elif text[i] == "?" or text[i] == "!" or text[i] == ".":
             sentences += 1
-        elif (text[i] == " " and text[i + 1]):
+        elif text[i] == " " and text[i + 1]:
             words += 1
         else:
             special_characters += 1
