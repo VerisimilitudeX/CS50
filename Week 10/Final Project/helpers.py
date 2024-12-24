@@ -130,7 +130,6 @@ def format_time(time):
     dt = datetime.datetime.fromtimestamp(timestamp / 1000)
     # prints the time in 12-hour format with AM/PM and the time zone abbreviation
     return dt.strftime("%I:%M %p %Z").lstrip("0")
-   # return datetime.datetime.fromtimestamp(time / 1000).strftime("%B %d, %I:%M %p")
 
 
 def format_money(value):
