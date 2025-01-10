@@ -63,7 +63,7 @@ Please leave a star ⭐ if you found this helpful!
   - [Lab 8: trivia](/8-HTML-CSS-Javascript/Lab-trivia)
   - Working on it!
  
-## 12. Stars
+## Stars
 Researchers employing DNAnalyzer in their investigations are encouraged to star this repository. Such engagement strengthens community collaboration and perpetuates open-source innovation.
 
 <a href="https://star-history.com/#VerisimilitudeX/CS50&Date">
